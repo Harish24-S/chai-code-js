@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+    // ADDING ELEMENT
+
+    function addLanguage(liLang){
+        const li = document.createElement('li');
+        li.innerHTML = `${liLang}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    // addLanguage("Python");
+    // addLanguage("Typescript");
+
+    // this is not so optimized becoz we have to traverse through the whole tree to reach the node and then append a new child
+
+    // the below is more optimized solution to edit elements in DOM
+    // this is more optimized bcoz we do not have to traverse the whole tree 
+    // we just create a new li element and then add a text to it and append it 
+    function addOptiLanguage(liLang){
+        const li = document.createElement('li');
+        const addText = document.createTextNode(liLang);
+        li.appendChild(addText);
+        document.querySelector('.language').appendChild(li);
+    } 
+    addOptiLanguage("Python");
+    addOptiLanguage("Typescript");
+    addOptiLanguage("Golang");
+
+    // EDITING ELEMENT
+    const secondLang = document.querySelector('li:nth-child(2)');
+    // secondLang.innerHTML = "Mojo";
+    const newli = document.createElement('li');
+    newli.textContent = "Mojo";
+    secondLang.replaceWith(newli);
+
+    //one more eg of edit
+    const firstLang = document.querySelector('li');
+    firstLang.outerHTML = '<li>Typescript</li>';
+    const newLi = document.createElement('li');
+    newLi.textContent = "Typescript";
+    // firstLang.replaceWith(newLi);
+
+
+    // REMOVING ELEMENT
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+    
+</script>
+</html>
