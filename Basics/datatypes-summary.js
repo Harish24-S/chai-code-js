@@ -38,3 +38,28 @@ console.log(typeof isLoggedIn, typeof outsideTemp);
 console.log(typeof heros, typeof myFunction);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack(Primitive) and Heap(non-primitive)
+
+let myYoutubeName = "harishdotcom"
+let anotherName = myYoutubeName
+anotherName = "chai aur harish"
+
+console.log(myYoutubeName);
+console.log(anotherName);
+
+let userOne = {
+    email: "user@gmail.com",
+    upi: "user@paytm"
+}
+
+let userTwo = userOne
+
+userTwo.upi = "user@gpay"
+
+console.log(userOne);
+console.log(userTwo);
