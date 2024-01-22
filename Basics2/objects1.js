@@ -45,5 +45,10 @@ JsUser.greetingTwo = function(){
 JsUser.greetingTwo()
 
 
+//empty object
+const user = {} // non-singleton object
+console.log(user);
+
+
 
 
